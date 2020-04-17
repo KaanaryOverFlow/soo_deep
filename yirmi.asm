@@ -3,6 +3,9 @@ BITS 64
 section .data
     nokta: db "*"
     altsatiragec: db 10
+    bekleme:
+       bir: dd 0
+       iki: dd 0
     
 section .text
 global main
