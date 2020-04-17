@@ -22,6 +22,15 @@ main:
     cmp bh, bl
     jne noktayaz
     
+    
+    mov dword [bir], 1
+    mov dword [iki], 0
+    mov rax, 35
+    mov rdi, bekleme
+    mov rcx, 0
+    syscall
+    
+    
     mov rax, 1
     mov rdi, 1
     mov rsi, altsatiragec
