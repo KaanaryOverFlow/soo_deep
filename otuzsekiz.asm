@@ -1,4 +1,4 @@
-bits 64 ; kendi komu satırımı yazıcam.
+bits 64 ; myconsole | usage -> >u r command;
 
 section .data
     komut: times 150 db 0
