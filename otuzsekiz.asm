@@ -1,14 +1,17 @@
-bits 64 ; my console | usege >command;
+bits 64 ; kendi komu satırımı yazıcam.
 
 section .data
+    gecicikom: db "command argv"
     komut: times 150 db 0
     komuta: dq 10
     argumanlar: times 150 db 0
     gosterge: db 10,">"
     gostergeu: equ $-gosterge
     sinir: db 0
-    hatamesaji: db "unknown command"
+    hatamesaji: db "syntax error"
     hatamesajil: equ $-hatamesaji
+    komuthatasi: db "unknown command error"
+    komuthatasil: equ $-komuthatasi
 
 section .bss
     input: resb 100
@@ -21,8 +24,7 @@ main:
     call gbas
     call iread
     call bk
-    call kisle
-    jmp main
+    jmp kisle
     call cikiskomutu
 
 
@@ -45,7 +47,14 @@ bk: ; gecici komut icerik degerlendirilmesi
 kisle: ; komut işleme fonskiyonu
     cmp dword [komut], 1953069157
     je cikiskomutu
-    ret
+    cmp dword [komut], 452623234404
+    je biseyyapma
+    jmp commandunk
+
+
+biseyyapma:
+    nop
+    jmp main
 
 cikiskomutu:
     mov rax, "<" ; exit code to 60 to 0x3c
@@ -81,5 +90,13 @@ hataligiris:
     mov rdi, 1
     mov rsi, hatamesaji
     mov rdx, hatamesajil
+    syscall
+    jmp main
+
+commandunk:
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, komuthatasi
+    mov rdx, komuthatasil
     syscall
     jmp main
