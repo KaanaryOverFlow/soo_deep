@@ -1,7 +1,6 @@
 bits 64 ; kendi komu satırımı yazıcam.
 
 section .data
-    gecicikom: db "command argv"
     komut: times 150 db 0
     komuta: dq 10
     argumanlar: times 150 db 0
