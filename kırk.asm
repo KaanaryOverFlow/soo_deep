@@ -16,7 +16,7 @@ main:
     call uzunyaz
     mov r15, metin2
     call uzunyaz
-    call cikis
+    call pausef
 
 pc: ; print char
     push rax
@@ -46,6 +46,9 @@ uyku:
     syscall
     ret
 
+pausef:
+    mov rax, 34
+    syscall
 
 
 cikis:
