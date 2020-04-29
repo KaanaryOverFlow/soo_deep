@@ -1,3 +1,3 @@
-nasm -f elf64 -o sezar.o sezar.asm
+nasm -f elf64 -o PROGRAM.o PROGRAM.asm
 
-ld -o sezar sezar.o
+ld -o PROGRAM PROGRAM.o
