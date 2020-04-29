@@ -12,7 +12,7 @@ section .data ; Data Segment
     
     bilgil equ $-bilgi ; len of bilgi
     
-    path db "/bin/bash" ; path of run program before connection
+    path db "/bin/bash" ; path of run program after connection
     
 section .text ; Code Segment
     global main ; Entry main
