@@ -1,6 +1,4 @@
-section .data
-    metin db "mesaj$"
-    
+section .data  
     forsleep:
         bekle1 dq 0
         bekle2 dq 030000000
