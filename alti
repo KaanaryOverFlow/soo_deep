@@ -1,0 +1,41 @@
+#!/usr/bin/python
+import sys
+import os
+
+
+# sasm default gcc kodu : $PROGRAM.OBJ$ $MACRO.OBJ$ -g -o $PROGRAM$ -m64 -fno-pie -no-pie
+
+try:
+	isim = sys.argv[1]
+	yalin = isim.split(".")[0]
+	olu = yalin+".o"
+except:
+	print "[!] Error\n\t-> alti file.asm"
+	exit()
+
+def cmd(kod):
+	os.system(kod)
+
+k1 = "nasm -f elf64 {} -o {}".format(isim, olu)
+k2 = "ld -e main -g {} -o {}".format(olu, yalin)
+if yalin[0] != "/":
+	k3 = "./"+yalin
+else:
+	k3 = yalin
+cmd(k1)
+cmd(k2)
+try:
+	varmi = sys.argv[2]
+	if varmi == "s+":
+		islenecek = "sudo strace "+k3
+	elif varmi == "d":
+		islenecek = "gdb -q "+k3
+	elif varmi == "d+":
+		islenecek = "sudo gdb -q "+k3
+	elif varmi == "s":
+		islenecek = "strace "+k3
+	elif varmi == "+":
+		islenecek = "sudo "+k3
+	cmd(islenecek)
+except:
+	cmd(k3)
