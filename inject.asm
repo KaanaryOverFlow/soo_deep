@@ -1,5 +1,6 @@
 ; otuz inject.asm
 ; sudo ./inject /dev/sdX
+; Tamamen egitim amaclidir. hic bir sorumluluk kabul etmiyorum!
 bits 32
 section .data
 	nonroot db "You Are no Root!",0x0a
