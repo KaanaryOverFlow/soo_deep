@@ -1,0 +1,5 @@
+#!/bin/sh
+echo ------------------ 32 ----------------------
+cat /usr/include/x86_64-linux-gnu/asm/unistd_32.h | grep $1
+echo ------------------ 64 ----------------------
+cat /usr/include/x86_64-linux-gnu/asm/unistd_64.h | grep $1
