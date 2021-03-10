@@ -27,9 +27,9 @@ main:
     call controldebug
     call pdstatus
     call csoc
+    call bind
 
 haziriz:
-    call bind
     call rfs
     call ethernetipv4tcp
     call playwithflags
