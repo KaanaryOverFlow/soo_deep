@@ -124,5 +124,5 @@ install: altmisdokuz-ip_finder dp hex_generator hile2 hile3 hile inject integer-
 clean:
 	find . | xargs file | grep "executable," | awk -F ":"  '{print $$1}' | xargs rm
 	rm *.o
-	rm mrg-gg.bin
+	rm mrb-gg.bin
 
