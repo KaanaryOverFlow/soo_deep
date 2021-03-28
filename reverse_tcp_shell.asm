@@ -1,5 +1,5 @@
 bits 64 ; assembly 64 bit reverse tcp shell 127.0.0.1 4444 -> all diy
-%include ".../writef.asm" ; write messages using my cool print function
+%include "writef.asm" ; write messages using my cool print function
 section .data ; Data Segment
     hata1 db "Socket Olusturalamadi",10,"$" ; message 1
     hata2 db "Baglanti Kurulamadi",10,"$" ; message 2

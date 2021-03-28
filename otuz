@@ -10,7 +10,7 @@ try:
 	yalin = isim.split(".")[0]
 	olu = yalin+".o"
 except:
-	print "[!] Error\n\t-> alti file.asm"
+	print ("[!] Error\n\t-> alti file.asm")
 	exit()
 
 def cmd(kod):
@@ -36,6 +36,9 @@ try:
 		islenecek = "strace "+k3
 	elif varmi == "+":
 		islenecek = "sudo "+k3
-	cmd(islenecek)
+	elif varmi == "q":
+		pass
+	else:
+		cmd(islenecek)
 except:
 	cmd(k3)
