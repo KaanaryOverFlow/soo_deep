@@ -1,3 +1,5 @@
+
+
 altmisdokuz-ip_finder: altmisdokuz-ip_finder.asm
 	alti altmisdokuz-ip_finder.asm q
 
@@ -47,6 +49,8 @@ led-yazi: led-yazi.asm
 mrb-gg.bin: mrb-gg.asm
 	nasm -f bin -o mrg-gg.bin mrb-gg.asm
 
+mrb-yine-mi-wrong.bin:
+	nasm -f bin mrb-yine-mi-wrong.asm -o mrb-yine-mi-wrong.bin
 
 
 otuzsekiz: otuzsekiz.asm
@@ -117,12 +121,18 @@ yirmibir: yirmibir.asm
 yirmisekiz: yirmisekiz.asm
 	alti yirmisekiz.asm q
 
-install: altmisdokuz-ip_finder dp hex_generator hile2 hile3 hile inject integer-string kırk led-yazi mrb-gg.bin otuzsekiz raw repeater reverse_tcp_shell scan_string_in_string server sezar yetmisiki yetmissekiz yetmisyedi yirmialti yirmi yirmibir yirmisekiz 
+install:
+	sudo cp ./alti /usr/bin/
+	sudo cp ./otuz /usr/bin/
+
+
+
+all: altmisdokuz-ip_finder dp hex_generator hile2 hile3 hile inject integer-string kırk led-yazi mrb-gg.bin otuzsekiz raw repeater reverse_tcp_shell scan_string_in_string server sezar yetmisiki yetmissekiz yetmisyedi yirmialti yirmi yirmibir yirmisekiz mrb-yine-mi-wrong.bin
 	echo "Done"
 
 
 clean:
 	find . | xargs file | grep "executable," | awk -F ":"  '{print $$1}' | xargs rm
 	rm *.o
-	rm mrb-gg.bin
+	rm *.bin
 
