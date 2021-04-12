@@ -12,13 +12,13 @@
 - python
 
 ## usage compiler
-- compiler program.asm <arguments>
+- $ ```compiler program.asm <arguments>```
 - compiler: ./alti or ./otuz
 - program: file.asm eg. hex_generator.asm
 - arguments: q,s,d,+,s+,d+ (not obliagory)
 - - q -> only compile, doesn't run binary
 - - s -> run as ```strace ./binary```
 - - d -> run as ```gdb -q ./binary```
-- - + -> run as ```sudo ./binary```
+- - \+ -> run as ```sudo ./binary```
 - - s+ -> run as ```sudo strace ./binary```
 - - d+ -> run as ```sudo gdb -q ./binary```
