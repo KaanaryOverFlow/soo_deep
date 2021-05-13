@@ -37,8 +37,7 @@ try:
 	elif varmi == "+":
 		islenecek = "sudo "+k3
 	elif varmi == "q":
-		pass
-	else:
-		cmd(islenecek)
+		exit()
+	cmd(islenecek)
 except:
 	cmd(k3)
