@@ -1,4 +1,4 @@
-; echo -n "bir" | ./bir | hex | sed -e "s/6964656e7469666572/,0x/g" -e "s/^,/mystring db /g"
+; echo -n "bir" | ./bir | hex | sed -e "s/6964656e7469666572/,0x/g" -e "s/^,/stri db /g"
 bits 64
 section .data
     errorm db "Bilinmeyen bir Hata olustu!",0x10
