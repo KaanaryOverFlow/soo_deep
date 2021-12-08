@@ -1,26 +1,38 @@
 bits 64
 section .data
+	silchr times 15 db 0x08
 	index dq 14
 	lenght equ 15
 	sayi times lenght db "0"
-	newline db 0x0a
+	newline db 0x00
 	bekle:
 		saniye dq 0
 		nanosaniye dq 050000000
 section .text
 	global main
 main:
+	call _remove_int_
 	call _print
 	call sleep
 	call _incerement
 	jmp main
 	call exit
 
+_remove_int_:
+	mov rax,1
+	mov rdi,1
+	mov rsi,silchr
+	mov rdx,15
+	syscall
+	ret
+
 sleep:
 	mov rax,35
 	mov rdi,bekle
 	syscall
 	ret
+
+
 
 
 _get_rax_index:
