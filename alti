@@ -6,12 +6,12 @@ import os
 # sasm default gcc kodu : $PROGRAM.OBJ$ $MACRO.OBJ$ -g -o $PROGRAM$ -m64 -fno-pie -no-pie
 
 try:
-	isim = sys.argv[1]
-	yalin = isim.split(".")[0]
-	olu = yalin+".o"
+    isim = sys.argv[1]
+    yalin = isim.split(".")[0]
+    olu = yalin+".o"
 except:
-	print ("[!] Error\n\t-> alti file.asm")
-	exit()
+    print ("[!] Error\n\t-> alti file.asm")
+    exit()
 
 def cmd(kod):
 	os.system(kod)
@@ -24,6 +24,8 @@ else:
 	k3 = yalin
 cmd(k1)
 cmd(k2)
+cmd(f"rm {olu}")
+islenecek = k3
 try:
 	varmi = sys.argv[2]
 	if varmi == "s+":
@@ -36,11 +38,7 @@ try:
 		islenecek = "strace "+k3
 	elif varmi == "+":
 		islenecek = "sudo "+k3
-	elif varmi == "q":
-		exit()
 	else:
-		print("invalid argument. run only binary")
-		assert 1==2
-	cmd(islenecek)
+		islenecek = ""
 except:
 	cmd(k3)
